@@ -1,0 +1,496 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+    background-color: #fffdd0;
+    color: #fffdd0;
+    line-height: 1.7;
+    overflow-x: hidden;
+}
+
+h1, h2, h3, h4 {
+    font-family: "Poppins", sans-serif;
+    color: #fffdd0;
+    line-height: 1.2;
+}
+
+main {
+    display: block;
+    width: 100%;
+}
+
+section {
+    width: 100%;
+    min-height: 100vh;
+    padding: 100px 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; 
+}
+
+section:not(#bukutamu) {
+    padding: 80px 0;
+    border-bottom: 1px solid #670A0A;
+    max-width: 1000px;
+    margin: auto;
+
+}
+
+section h2 {
+    color: #670A0A;
+    font-size: 2.5rem;
+    margin-bottom: 50px;
+    text-align: center;
+}
+
+header {
+    position: sticky;
+    top: 0;
+    z-index: 999;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background: #670A0A;
+    border-bottom: 2px solid #fffdd0;
+    backdrop-filter: blur(10px);
+}
+
+header h1 {
+    font-size: 1.5rem;
+    color: #670A0A3;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #fffdd0;
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+nav ul li a:hover {
+    color: #fafafa78;
+}
+
+#home {
+    background: linear-gradient(to right, #fffdd0, #fffdd0);
+    justify-content: center; 
+}
+
+.home-content {
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 60px;
+}
+
+.home-text {
+    flex: 1;
+    max-width: 600px;
+}
+
+.home-text h4 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+    color: #670A0A;
+}
+
+.home-text h2 {
+    font-size: 3.5rem;
+    margin-bottom: 20px;
+}
+
+.home-text p {
+    font-size: 1.3rem;
+    margin-bottom: 30px;
+    color: #670A0A; 
+}
+
+#home .btn {
+    display: inline-block;
+    background: #670A0A; 
+    color: #fffdd0;      
+    padding: 12px 30px;
+    border-radius: 50px; 
+    text-decoration: none;
+    font-weight: 600;
+    transition: 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+}
+
+#home .btn:hover {
+    background: #670A0A;
+    color: #fffdd0;
+    transform: translateY(-3px);
+}
+
+.home-image {
+    text-align: center;
+}
+
+.home-image img {
+    width: 350px;
+    height: 350px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 5px solid #670A0A;
+}
+
+#about {
+    background-color: #fffdd0;
+}
+
+#about p {
+    max-width: 1000px;
+    margin: 0 auto 20px;
+    text-align: justify;
+    text-indent: 2em;
+    font-size: 1.1rem;
+    color: #670A0A;
+}
+
+#profile {
+    background-color: #fffdd0;
+}
+
+.profile-container {
+    max-width: 1000px;
+    margin: auto;
+    text-align: center;
+}
+
+.profile-photo {
+    margin-bottom: 25px;
+}
+
+#profile img {
+    width: 220px;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 5px solid #670A0A;
+    box-shadow: 0 0 25px #b61d1d;
+}
+
+#profile h3 {
+    color: #670A0A;
+    margin: 20px 0;
+    font-size: 1.5rem;
+}
+
+#profile p {
+    text-align: justify;
+    text-indent: 2rem;
+    margin-bottom: 15px;
+    font-size: 1.1rem;
+    color: #670A0A;
+}
+
+#galery {
+    background-color: #fffdd0;
+}
+
+#galery ul {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+}
+
+.foto-card {
+    position: relative;
+    overflow: hidden;
+    border-radius: 20px;
+    background: #670A0A;
+    transition: 0.4s;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.foto-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px #670A0A;
+}
+
+.foto-card img {
+    width: 100%;
+    height: 280px;
+    object-fit: cover;
+    transition: 0.5s;
+}
+
+.foto-card:hover img {
+    transform: scale(1.08);
+}
+
+.caption1 {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    background: #670A0A; 
+    color: #fffdd0;
+    padding: 6px 15px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+    z-index: 2;
+}
+
+.foto-card figcaption {
+    padding: 20px;
+}
+
+.foto-card h4 {
+    color: #fffdd0; 
+    margin-bottom: 10px;
+}
+
+.foto-card p {
+    color: #fffdd0;
+    opacity: 0.8;
+}
+
+#video {
+    background-color: #fffdd0;
+}
+
+#video p {
+    color: #fffdd0;
+}
+
+#video ul {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 25px;
+}
+
+#video figure {
+    background: #670A0A;
+    padding: 15px;
+    border-radius: 15px;
+    transition: 0.3s;
+}
+
+#video figure:hover {
+    transform: translateY(-5px);
+}
+
+#video video {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+#video figcaption {
+    text-align: center;
+    margin-top: 10px;
+    color: #fffdd0;
+}
+
+#bukutamu {
+    background: #fffdd0;
+}
+
+#bukutamu h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #670A0A;
+}
+
+.guestbook {
+    width: 100%;
+    max-width: 700px;
+    margin: auto;
+    padding: 30px;
+    background: #fffdd0;
+    border-radius: 25px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    color: #670A0A;
+    font-weight: 600;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 14px;
+    border: 1px solid #670A0A;
+    border-radius: 12px;
+    font-size: 15px;
+    font-family: "Poppins", sans-serif;
+    transition: 0.3s;
+    background: transparent;
+    color: #670A0A;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    background: rgba(103, 10, 10, 0.05);
+}
+
+button {
+    width: 100%;
+    border: none;
+    padding: 15px;
+    border-radius: 12px;
+    background: #670A0A;
+    color: #fffdd0;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    background: #670A0A;
+    transform: translateY(-2px);
+}
+
+footer {
+    text-align: center;
+    padding: 40px 20px;
+    background: #670A0A;
+    border-top: 2px solid #670A0A;
+}
+
+footer p {
+    margin-bottom: 10px;
+}
+
+footer a {
+    color: #fffdd0;
+    text-decoration: none;
+    margin: 0 10px;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+footer a:hover {
+    color: #fffdd0;
+}
+
+#home, #about, #profile, #galery, #video, #bukutamu {
+    animation: fadeUp 0.8s ease;
+}
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 992px) {
+    header {
+        flex-direction: column;
+        gap: 15px;
+        padding: 20px;
+    }
+
+    nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .home-content {
+        flex-direction: column-reverse; /* Gambar di atas teks */
+        text-align: center;
+        gap: 30px;
+    }
+
+    #home h2 {
+        font-size: 2.7rem;
+    }
+
+    section h2 {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    section {
+        padding: 60px 20px; 
+    }
+    
+    nav ul {
+        gap: 15px;
+    }
+
+    #home h2 {
+        font-size: 2rem;
+    } 
+
+    #home p {
+        font-size: 1.1rem;
+    }
+
+    #profile img {
+        width: 180px;
+        height: 180px;
+    }
+
+    #galery ul, #video ul {
+        grid-template-columns: 1fr; /* 1 baris ke bawah penuh di HP */
+    }
+}
+
+@media (max-width: 480px) {
+    nav ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    nav ul a {
+        font-size: 14px;
+    }
+
+    #home h2 {
+        font-size: 1.6rem;
+    }
+
+    #profile img {
+        width: 150px;
+        height: 150px;
+    }
+
+    .foto-card img {
+        height: 220px;
+    }
+
+    .guestbook {
+        padding: 20px 15px; 
+    }
+}
