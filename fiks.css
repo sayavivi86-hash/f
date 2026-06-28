@@ -76,15 +76,21 @@ nav ul {
     align-items: center;
 }
 
+nav ul {
+    list-style: none;
+    display: flex;
+    flex-direction: row;   /* Menu disusun ke samping */
+    align-items: center;
+    gap: 20px;
+    padding: 0;
+    margin: 0;
+}
+
 nav ul li a {
     text-decoration: none;
     color: #fffdd0;
     font-weight: 500;
     transition: 0.3s;
-}
-
-nav ul li a:hover {
-    color: #fafafa78;
 }
 
 #home {
