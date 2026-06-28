@@ -413,15 +413,28 @@ footer a:hover {
 
 @media (max-width: 992px) {
     header {
-        flex-direction: column;
-        gap: 15px;
-        padding: 20px;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        padding: 15px 20px;
+    }
+
+    nav {
+        overflow-x: auto;
     }
 
     nav ul {
-        flex-wrap: wrap;
-        justify-content: center;
+        flex-wrap: nowrap;
+        white-space: nowrap;
+        justify-content: flex-end;
     }
+
+    .home-content {
+        flex-direction: column-reverse;
+        text-align: center;
+        gap: 30px;
+    }
+}
 
     .home-content {
         flex-direction: column-reverse; /* Gambar di atas teks */
@@ -466,10 +479,17 @@ footer a:hover {
 }
 
 @media (max-width: 480px) {
-    nav ul {
-        flex-direction: column;
-        gap: 10px;
+    nav {
+        overflow-x: auto;
     }
+
+    nav ul {
+        flex-direction: row;
+        flex-wrap: nowrap;
+        gap: 15px;
+        white-space: nowrap;
+    }
+}
 
     nav ul a {
         font-size: 14px;
